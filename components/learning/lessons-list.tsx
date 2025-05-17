@@ -36,7 +36,7 @@ export function LessonsList({ lessons, pathId }: LessonsListProps) {
                   <div className="flex items-center gap-2">
                     <h3 className="font-medium">{lesson.title}</h3>
                     <Badge variant={
-                      lesson.status === 'completed' ? 'success' :
+                      lesson.status === 'completed' ? 'default' :
                       lesson.status === 'in-progress' ? 'secondary' : 
                       'outline'
                     }>
