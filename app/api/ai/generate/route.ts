@@ -50,11 +50,17 @@ export async function POST(req: Request) {
         });
 
         const generatedText = completion.choices[0].message.content;
-        console.log("truncated generated text", generatedText?.slice(0, 100));
+        if (!generatedText) {
+          return NextResponse.json(
+            { error: 'Failed to generate text content' },
+            { status: 500 }
+          );
+        }
+        console.log("truncated generated text", generatedText.slice(0, 100));
         
         // Extract image tags and generate images
         const imageRegex = /\[?<(?:image|img)\s+(?:alt=["']([^"']+)["']|src=["'][^"']+["']\s+alt=["']([^"']+)["'])\s*>\]?/g;
-        const imageMatches = [...generatedText.matchAll(imageRegex)];
+        const imageMatches = Array.from(generatedText.matchAll(imageRegex));
         const generatedImages: GeneratedImage[] = [];
 
         console.log("num of matches", imageMatches.length);
