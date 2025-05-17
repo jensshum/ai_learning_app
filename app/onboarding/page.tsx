@@ -64,6 +64,7 @@ export default function CreateLearningPathPage() {
       });
 
       if (!response.ok) {
+        console.error('Failed to generate learning paths:', response);
         throw new Error('Failed to generate learning paths');
       }
 
