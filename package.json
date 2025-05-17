@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && tsc --noEmit",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "next start"
   },
   "dependencies": {
     "@fal-ai/client": "^1.4.0",
