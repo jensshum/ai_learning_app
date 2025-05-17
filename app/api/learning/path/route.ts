@@ -63,7 +63,7 @@ export async function POST(req: Request) {
   } catch (error: any) {
     console.error('Learning path generation error:', error);
     return NextResponse.json(
-      { error: 'Failed to create learning path' },
+      { error: 'Failed to create learning path' + error },
       { status: 500 }
     );
   }
