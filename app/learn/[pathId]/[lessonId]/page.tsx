@@ -7,9 +7,10 @@ interface LessonPageProps {
     pathId: string;
     lessonId: string;
   };
+  searchParams: { [key: string]: string | string[] | undefined };
 }
 
-export default function LessonPage({ params }: LessonPageProps) {
+export default async function LessonPage({ params }: LessonPageProps) {
   return (
     <DashboardShell>
       <LessonContent pathId={params.pathId} lessonId={params.lessonId} />

@@ -32,6 +32,7 @@ interface LearningPath {
 interface LearningPathPageProps {
   params: {
     pathId: string;
+    lessonId: string;
   };
 }
 
