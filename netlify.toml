@@ -7,4 +7,4 @@
 
 [functions.timeout]
   # Set the default timeout for all functions to 26 seconds
-  timeout = 400 # Maximum allowed on Pro plan. Set to 10 on Free plan if you explicitly need it.
+  timeout = 26 # Maximum allowed on Pro plan. Set to 10 on Free plan if you explicitly need it.
